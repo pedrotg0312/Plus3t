@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <!-- 
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/muestraocultatablas.js"></script>
+        <script type="text/javascript" src="js/scramble.js"></script>
+        <script type="text/javascript" src="js/cronometro.js"></script>
+        <script type="text/javascript" src="js/mostrarresultados.js"></script>
+        <script type="text/javascript" src="js/promedios2x2.js"></script>
+        <script type="text/javascript" src="js/promedios3x3.js"></script>
+        <script type="text/javascript" src="js/promedios4x4.js"></script>
+        <script type="text/javascript" src="js/promedios5x5.js"></script>
+        <script type="text/javascript" src="js/promedios6x6.js"></script>
+        <script type="text/javascript" src="js/promedios7x7.js"></script>
+        <script type="text/javascript" src="js/promediosPyra.js"></script>
+        <script type="text/javascript" src="js/resultados2x2.js"></script>
+        <script type="text/javascript" src="js/resultados3x3.js"></script>
+        <script type="text/javascript" src="js/resultados4x4.js"></script>
+        <script type="text/javascript" src="js/resultados5x5.js"></script>
+        <script type="text/javascript" src="js/resultados6x6.js"></script>
+        <script type="text/javascript" src="js/resultados7x7.js"></script>
+        <script type="text/javascript" src="js/resultadosPyra.js"></script>
+        <script type="text/javascript" src="js/iScroll.js"></script>
+        <title>Plus3t</title>
+    </head>
+    <body>
+        
+        <!--Pantalla de selección de cubos-->
+        <section id="selectinicio">
+            <ul id="selectinicio3">
+                <li class="listacubos" onclick="muestraoculta(2);">
+                    <img src="img/2x2.png" class="listacubo">
+                    <div class="listatipo">2x2</div>
+                </li>
+                <div class="pequenadivision" id="primeradiv"></div>
+
+                <li class="listacubos" onclick="muestraoculta(3);">
+                    <img src="img/3x3.png" class="listacubo">
+                    <div class="listatipo">3x3</div>
+                </li>
+                <div class="pequenadivision" id="segundadiv"></div>
+
+                <li class="listacubos" onclick="muestraoculta(4);">
+                    <img src="img/4x4.png" class="listacubo">
+                    <div class="listatipo">4x4</div>
+                </li>
+                <div class="pequenadivision" id="terceradiv"></div>
+
+                <li class="listacubos" onclick="muestraoculta(5);">
+                    <img src="img/5x5.png" class="listacubo">
+                    <div class="listatipo">5x5</div>
+                </li>
+                <div class="pequenadivision" id="cuartadiv"></div>
+
+                <li class="listacubos" onclick="muestraoculta(6);">
+                    <img src="img/6x6.png" class="listacubo">
+                    <div class="listatipo">6x6</div>
+                </li>
+                <div class="pequenadivision" id="quintadiv"></div>
+
+                <li class="listacubos" onclick="muestraoculta(7);">
+                    <img src="img/7x7.png" class="listacubo">
+                    <div class="listatipo">7x7</div>
+                </li>
+                <div class="pequenadivision" id="sextadiv"></div>
+            
+                <li class="listacubos" onclick="muestraoculta(8);">
+                    <img src="img/pyra.png" class="listacubo">
+                    <div class="listatipo" id="Pyra">Pyraminx</div>
+                </li>
+                <div class="pequenadivision" id="septimadiv"></div>
+            
+            </ul> 
+        </section>
+        
+        <!--Tira de nuevo Récord-->
+        <section id="nuevorecord"><p>One New Single Record!!!</p></section>
+
+        <!--Tira donde está-->
+        <section class="tiralugardondeesta" id="tira2x2">
+            <img class="menu" src="img/menu.png" onclick="muestraoculta(100);">
+            <img class="menucubo" src="img/2x2.png">
+            <div class="menutexto">2x2</div>
+        </section>
+
+        <section class="tiralugardondeesta" id="tira3x3">
+            <img class="menu" src="img/menu.png" onclick="muestraoculta(100);">
+            <img class="menucubo" src="img/3x3.png">
+            <div class="menutexto">3x3</div>
+        </section>
+
+        <section class="tiralugardondeesta" id="tira4x4">
+            <img class="menu" src="img/menu.png" onclick="muestraoculta(100);">
+            <img class="menucubo" src="img/4x4.png">
+            <div class="menutexto">4x4</div>
+        </section>
+
+        <section class="tiralugardondeesta" id="tira5x5">
+            <img class="menu" src="img/menu.png" onclick="muestraoculta(100);">
+            <img class="menucubo" src="img/5x5.png">
+            <div class="menutexto">5x5</div>
+        </section>
+
+        <section class="tiralugardondeesta" id="tira6x6">
+            <img class="menu" src="img/menu.png" onclick="muestraoculta(100);">
+            <img class="menucubo" src="img/6x6.png">
+            <div class="menutexto">6x6</div>
+        </section>
+
+        <section class="tiralugardondeesta" id="tira7x7">
+            <img class="menu" src="img/menu.png" onclick="muestraoculta(100);">
+            <img class="menucubo" src="img/7x7.png">
+            <div class="menutexto">7x7</div>
+        </section>
+
+        <section class="tiralugardondeesta" id="tiraPyra">
+            <img class="menu" src="img/menu.png" onclick="muestraoculta(100);">
+            <img class="menucubo" src="img/Pyra.png">
+            <div class="menutexto">Pyra</div>
+        </section>
+
+        <!--Menú-->
+        <nav id="menugeneral">
+            <ul id="menugeneralul">
+                <li class="menugeneralli" onclick="muestraoculta(101);"><img src="img/back.png"></li>
+                <li class="menugeneralli" onclick="muestraoculta(102);">Select Cube</li>
+                <li class="menugeneralli" onclick="muestraoculta(103);">Time</li>
+                <li class="menugeneralli" onclick="muestraoculta(104);">Averages</li>
+            </ul>
+        </nav>
+
+        <!--Cuerpo-->
+        <section id="bodytiempo" onclick="Comenzar(32);">
+            <div id="bodycontenedor">   
+                <div>
+                    <p id="algoritmo"></p>
+                </div>
+
+                <div id="cronometrocontenedor">
+                    <p id="cronometro">00:00.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!--tabla de tiempos-->
+        <div class="btncanceltime"><img class="ocultaravg" src="img/cancel.png" onclick="muestraoculta(106);"></div>
+        
+        <section class="contenedor" id="contenedortiempos2x2">
+            <div class="divlista">
+                <ul class="ulLista" id="ulLista2x2"></ul>
+            </div>
+        </section>
+        
+        <section class="contenedor" id="contenedortiempos3x3">
+            <div class="divlista">
+                <ul class="ulLista" id="ulLista3x3"></ul>
+            </div>
+        </section>
+
+        <section class="contenedor" id="contenedortiempos4x4">
+            <div class="divlista">
+                <ul class="ulLista" id="ulLista4x4"></ul>
+            </div>
+        </section>
+
+        <section class="contenedor" id="contenedortiempos5x5">
+            <div class="divlista">
+                <ul class="ulLista" id="ulLista5x5"></ul>
+            </div>
+        </section>
+
+        <section class="contenedor" id="contenedortiempos6x6">
+            <div class="divlista">
+                <ul class="ulLista" id="ulLista6x6"></ul>
+            </div>
+        </section>
+
+        <section class="contenedor" id="contenedortiempos7x7">
+            <div class="divlista">
+                <ul class="ulLista" id="ulLista7x7"></ul>
+            </div>
+        </section>
+
+        <section class="contenedor" id="contenedortiemposPyra">
+            <div class="divlista">
+                <ul class="ulLista" id="ulListaPyra"></ul>
+            </div>
+        </section>
+
+        <!--tabla de avg-->
+        <section class="contenedoravg" id="contenedoravg2x2">
+            <div class="btncancel"><img class="ocultaravg" src="img/cancel.png" onclick="muestraoculta(105);"></div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 5: </p>
+                <div class='avgdivtiempo' id='avg5time2x2'> 00:00.00</div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 12: </p>
+                <div class='avgdivtiempo' id='avg12time2x2'>00:00.00 </div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 100: </p>
+                <div class='avgdivtiempo' id='avg100time2x2'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="contenedoravg" id="contenedoravg3x3">
+            <div class="btncancel"><img class="ocultaravg" src="img/cancel.png" onclick="muestraoculta(105);"></div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 5: </p>
+                <div class='avgdivtiempo' id='avg5time3x3'> 00:00.00</div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 12: </p>
+                <div class='avgdivtiempo' id='avg12time3x3'>00:00.00 </div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 100: </p>
+                <div class='avgdivtiempo' id='avg100time3x3'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="contenedoravg" id="contenedoravg4x4">
+            <div class="btncancel"><img class="ocultaravg" src="img/cancel.png" onclick="muestraoculta(105);"></div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 5: </p>
+                <div class='avgdivtiempo' id='avg5time4x4'> 00:00.00</div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 12: </p>
+                <div class='avgdivtiempo' id='avg12time4x4'>00:00.00 </div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 100: </p>
+                <div class='avgdivtiempo' id='avg100time4x4'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="contenedoravg" id="contenedoravg5x5">
+            <div class="btncancel"><img class="ocultaravg" src="img/cancel.png" onclick="muestraoculta(105);"></div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 5: </p>
+                <div class='avgdivtiempo' id='avg5time5x5'> 00:00.00</div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 12: </p>
+                <div class='avgdivtiempo' id='avg12time5x5'>00:00.00 </div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 100: </p>
+                <div class='avgdivtiempo' id='avg100time5x5'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="contenedoravg" id="contenedoravg6x6">
+            <div class="btncancel"><img class="ocultaravg" src="img/cancel.png" onclick="muestraoculta(105);"></div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 5: </p>
+                <div class='avgdivtiempo' id='avg5time6x6'> 00:00.00</div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 12: </p>
+                <div class='avgdivtiempo' id='avg12time6x6'>00:00.00 </div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 100: </p>
+                <div class='avgdivtiempo' id='avg100time6x6'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="contenedoravg" id="contenedoravg7x7">
+            <div class="btncancel"><img class="ocultaravg" src="img/cancel.png" onclick="muestraoculta(105);"></div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 5: </p>
+                <div class='avgdivtiempo' id='avg5time7x7'> 00:00.00</div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 12: </p>
+                <div class='avgdivtiempo' id='avg12time7x7'>00:00.00 </div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 100: </p>
+                <div class='avgdivtiempo' id='avg100time7x7'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="contenedoravg" id="contenedoravgPyra">
+            <div class="btncancel"><img class="ocultaravg" src="img/cancel.png" onclick="muestraoculta(105);"></div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 5: </p>
+                <div class='avgdivtiempo' id='avg5timePyra'> 00:00.00</div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 12: </p>
+                <div class='avgdivtiempo' id='avg12timePyra'>00:00.00 </div>
+            </div>
+            <div class="avgtira">
+                <p class='avg5-12-100'>Average 100: </p>
+                <div class='avgdivtiempo' id='avg100timePyra'>00:00.00 </div>
+            </div>
+        </section>
+
+        <!--Tira de Median, Best and worst-->
+        <section class="sectiontiempos" id="promedios2x2" value="2">
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Median: </p>
+                <div class='divtiempo' id='avg2x2'> 00:00.00</div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Best: </p>
+                <div class='divtiempo' id='best2x2'>00:00.00 </div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Worst: </p>
+                <div class='divtiempo' id='worst2x2'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="sectiontiempos" id="promedios3x3" value="3">
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Median: </p>
+                <div class='divtiempo' id='avg3x3'> 00:00.00</div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Best: </p>
+                <div class='divtiempo' id='best3x3'>00:00.00 </div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Worst: </p>
+                <div class='divtiempo' id='worst3x3'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="sectiontiempos" id="promedios4x4" value="4">
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Median: </p>
+                <div class='divtiempo' id='avg4x4'> 00:00.00</div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Best: </p>
+                <div class='divtiempo' id='best4x4'>00:00.00 </div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Worst: </p>
+                <div class='divtiempo' id='worst4x4'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="sectiontiempos" id="promedios5x5" value="5">
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Median: </p>
+                <div class='divtiempo' id='avg5x5'> 00:00.00</div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Best: </p>
+                <div class='divtiempo' id='best5x5'>00:00.00 </div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Worst: </p>
+                <div class='divtiempo' id='worst5x5'>00:00.00 </div>
+            </div>
+        </section>
+        
+        <section class="sectiontiempos" id="promedios6x6" value="6">
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Median: </p>
+                <div class='divtiempo' id='avg6x6'> 00:00.00</div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Best: </p>
+                <div class='divtiempo' id='best6x6'>00:00.00 </div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Worst: </p>
+                <div class='divtiempo' id='worst6x6'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="sectiontiempos" id="promedios7x7" value="7">
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Median: </p>
+                <div class='divtiempo' id='avg7x7'> 00:00.00</div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Best: </p>
+                <div class='divtiempo' id='best7x7'>00:00.00 </div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Worst: </p>
+                <div class='divtiempo' id='worst7x7'>00:00.00 </div>
+            </div>
+        </section>
+
+        <section class="sectiontiempos" id="promediosPyra" value="8">
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Median: </p>
+                <div class='divtiempo' id='avgPyra'> 00:00.00</div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Best: </p>
+                <div class='divtiempo' id='bestPyra'>00:00.00 </div>
+            </div>
+            <div class ='avg_b_w'>
+                <p class='ptiempo'>Worst: </p>
+                <div class='divtiempo' id='worstPyra'>00:00.00 </div>
+            </div>
+        </section>
+        
+    </body>
+</html>

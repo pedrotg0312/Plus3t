@@ -1,0 +1,560 @@
+* 
+{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+@font-face {
+	font-family: 'letrageneral';
+    src: url('../fonts/luxisr-webfont.eot');
+	src: url('../fonts/luxisr-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/luxisr-webfont.woff') format('woff'),
+	url('../fonts/luxisr-webfont.ttf') format('truetype'),
+	url('../fonts/luxisr-webfont.svg#letrageneral') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'letratiempo';
+	src: url('../fonts/DIGITALDREAMNARROW-webfont.eot');
+	src: url('../fonts/DIGITALDREAMNARROW-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/DIGITALDREAMNARROW-webfont.woff') format('woff'),
+	    url('../fonts/DIGITALDREAMNARROW-webfont.ttf') format('truetype'),
+	    url('../fonts/DIGITALDREAMNARROW-webfont.svg#letratiempo') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body
+{
+	font-family: "letrageneral";
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+}
+ul
+{
+	list-style: none; 
+}
+.divtiempo, .avgdivtiempo
+{
+	font-family: "letratiempo";
+}
+
+@media screen and (max-width: 320px){
+
+/**************************Pantalla de selección de cubo*/
+	#cuartadiv
+	{
+		background-color: #29DE29;
+	}
+	#primeradiv
+	{
+		background-color: #E4E626;
+	}
+	#Pyra
+	{
+		font-size: 2em;
+	}
+	#quintadiv
+	{
+		background-color: #2B2BDF;
+	}
+	#segundadiv
+	{
+		background-color: #F47B1A;
+	}
+	#selectinicio
+	{
+		background-color: rgba(255,255,255,1);
+		height: 100%;
+		position: absolute;
+		top:0;
+		width: 100%;
+		z-index: 1000;
+	}
+	#selectinicio3
+	{
+		margin: 0;
+		padding: 0;
+	}
+	#septimadiv
+	{
+		background-color: #1DE8DC;
+	}
+	#sextadiv
+	{
+		background-color: #EB25DB;
+	}
+	#terceradiv
+	{
+		background-color: #E90C2B;
+	}
+	.listacubo, .listatipo
+	{
+		display: inline-block;
+		vertical-align: top;
+	}
+	.listacubos
+	{
+		background: rgba(255,255,255,1);
+	}
+	.listatipo
+	{
+		color: rgba(1,1,1,.7);
+		font-size: 50px;
+		margin: 0 0 0 25%;
+		text-align: right;
+		width: 40%;
+	}
+	.pequenadivision
+	{
+		height: 25px;
+	}
+/**************************Tira dónde está*/
+	.menu, .menucubo, .menutexto
+	{
+		display: inline-block;
+	}
+	.menu
+	{
+		margin: 0 0 0 7%;
+		width: 12%;
+	}
+	.menucubo
+	{
+		padding: .1em .5em 0 2em;
+		margin-left: 8%;
+	}
+	.menutexto
+	{
+		color: rgba(255,255,255,.8);
+		font-size: 50px;
+		width: 40%;
+	}
+	.tiralugardondeesta
+	{
+		background: rgba(56, 122, 186, 1);
+		height: 15%;
+		left: -100%;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 700;
+	}
+/**************************Cuerpo*/
+	#bodycontenedor
+	{
+		margin: 45% 0 0 0;
+	}
+	#bodytiempo
+	{
+		background: rgba(255, 255, 255, 1);
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+	}
+	#cronometro
+	{
+		font-family: "letratiempo";
+		font-size: 2.5em;
+	}
+/**************************Tira de Median, Best and worst*/
+	.avg_b_w
+	{
+		float: left;
+		width: 33.33%;
+	}
+	.ocultatiempos, .avg_b_w
+	{
+		left: -100%;
+	}
+	.sectiontiempos
+	{
+		background: lightgreen;
+		bottom: 0;
+		left: -100%;
+		padding: 1em 0;
+		position: fixed;
+		width: 100%;
+		z-index: 700;
+	}
+/**************************Tabla de tiempos*/
+	.btncanceltime
+	{
+		margin: 69px 0 0 0;
+		padding: .5em;
+		position: absolute;
+		left: -100%;
+  		z-index: 700;
+	}
+	.contenedor
+	{
+		background: rgba(255, 255, 255, 1); 
+  		bottom: 101px;
+  		left: -100%;
+  		overflow: hidden;
+		position: absolute;
+  		top: 70px;
+  		width: 100%;
+  		z-index: 600;
+	}
+	.divlista
+	{
+		background: rgba(255, 255, 255, 1);
+		position: absolute;
+		text-align: right;
+		width: 100%;
+		z-index: 600;	
+	}
+	.espantosaX
+	{
+		background: url("../img/cross.png") no-repeat;
+		height: 26px;
+		margin: 3% 10% 0 20%;
+		width: 10%;
+	}
+	.espantosaX, .espantosores
+	{
+		display: inline-block;
+	}
+	.espantosores
+	{
+		margin: 0;
+		padding: 0;
+	}
+	.resultadoagregado
+	{
+		border-bottom: 1px solid black;
+		font-family: "letrageneral";
+		padding: .5em 0;
+		text-align: left;
+	}
+	.ulLista
+	{
+		margin: 0;
+		padding: 0;
+	}
+/**************************Tabla de AVG*/
+	.avg5-12-100, .avgdivtiempo
+	{
+		display: inline-block;
+		padding: 0 .3em;
+	} 
+	.btncancel
+	{
+		padding: .5em;
+		text-align: right;
+	}
+	.avgtira
+	{
+		padding-top: .3em;
+	}
+	.contenedoravg
+	{
+  		background: rgba(255, 255, 255, 1);
+		height: 80%;
+  		left: -100%;
+  		padding: 21% 0 0 0;
+		position: absolute;
+		top:0;
+  		width: 100%;
+  		z-index: 600;
+	}
+/**************************Menú*/
+	#menugeneral
+	{
+		background: rgba(0,0,0,.7);
+		height: 100%;
+		left: -100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 900;
+	}
+	#menugeneralul
+	{
+		margin: 0;
+		padding: 0;
+	}
+	.menugeneralli
+	{
+		border-bottom: 1px solid white;
+		color: rgba(219,215,210,8);
+		font-family: "letrageneral";
+		font-size: 15px;
+		padding: 2em 0;
+	}
+/**************************Nuevo Récord*/
+	#nuevorecord
+	{
+		background: #81EFA8;
+		color: #0D0B6C;
+		font-family: "letrageneral";
+		padding: .5em 0;
+		position: absolute;
+		top: -100%;
+		width: 100%;
+		z-index: 800;
+	}
+}
+
+@media only screen and (min-width: 321px) and (max-width: 480px){
+
+/**************************Pantalla de selección de cubo*/
+	#cuartadiv
+	{
+		background-color: #29DE29;
+	}
+	#primeradiv
+	{
+		background-color: #E4E626;
+	}
+	#Pyra
+	{
+		font-size: 2em;
+	}
+	#quintadiv
+	{
+		background-color: #2B2BDF;
+	}
+	#segundadiv
+	{
+		background-color: #F47B1A;
+	}
+	#selectinicio
+	{
+		background-color: rgba(255,255,255,1);
+		height: 100%;
+		position: absolute;
+		top:0;
+		width: 100%;
+		z-index: 1000;
+	}
+	#selectinicio3
+	{
+		margin: 0;
+		padding: 0;
+	}
+	#septimadiv
+	{
+		background-color: #1DE8DC;
+	}
+	#sextadiv
+	{
+		background-color: #EB25DB;
+	}
+	#terceradiv
+	{
+		background-color: #E90C2B;
+	}
+	.listacubo, .listatipo
+	{
+		display: inline-block;
+		vertical-align: top;
+	}
+	.listacubos
+	{
+		background: rgba(255,255,255,1);
+	}
+	.listatipo
+	{
+		color: rgba(1,1,1,.7);
+		font-size: 50px;
+		margin: 0 0 0 25%;
+		text-align: right;
+		width: 40%;
+	}
+	.pequenadivision
+	{
+		height: 25px;
+	}
+/**************************Tira dónde está*/
+	.menu, .menucubo, .menutexto
+	{
+		display: inline-block;
+	}
+	.menu
+	{
+		margin: 0 0 0 7%;
+		width: 9%;
+	}
+	.menucubo
+	{
+		padding: .1em .5em 0 2em;
+		margin-left: 8%;
+	}
+	.menutexto
+	{
+		color: rgba(255,255,255,.8);
+		font-size: 50px;
+		width: 40%;
+	}
+	.tiralugardondeesta
+	{
+		background: rgba(56, 122, 186, 1);
+		left: -100%; 
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 700;
+	}
+/**************************Cuerpo*/
+	#bodycontenedor
+	{
+		margin: 19% 0 0 0;
+	}
+	#bodytiempo
+	{
+		background: rgba(255, 255, 255, 1);
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+	}
+	#cronometro
+	{
+		font-family: "letratiempo";
+		font-size: 2.5em;
+	}
+/**************************Tira de Median, Best and worst*/
+	.avg_b_w
+	{
+		left: -100%;
+		float: left;
+		width: 33.33%;
+	}
+	.sectiontiempos
+	{
+		background: lightgreen;
+		bottom: 0;
+		left: -100%;
+		padding: 0 0 1em 0;
+		position: fixed;
+		width: 100%;
+		z-index: 700;
+	}
+/**************************Tabla de tiempos*/
+	.btncanceltime
+	{
+		margin: 69px 0 0 0;
+		padding: .5em;
+		position: absolute;
+		left: -100%;
+  		z-index: 700;
+	}
+	.contenedor
+	{
+		background: rgba(255, 255, 255, 1); 
+  		bottom: 101px;
+  		left: -100%;
+  		overflow: hidden;
+		position: absolute;
+  		top: 70px;
+  		width: 100%;
+  		z-index: 600;
+	}
+	.divlista
+	{
+		background: rgba(255, 255, 255, 1);
+		position: absolute;
+		text-align: right;
+		width: 100%;
+		z-index: 600;	
+	}
+	.espantosaX
+	{
+		background: url("../img/cross.png") no-repeat;
+		height: 26px;
+		margin: 3% 10% 0 20%;
+		width: 10%;
+	}
+	.espantosaX, .espantosores
+	{
+		display: inline-block;
+	}
+	.espantosores
+	{
+		margin: 0;
+		padding: 0;
+	}
+	.resultadoagregado
+	{
+		border-bottom: 1px solid black;
+		font-family: "letrageneral";
+		padding: .5em 0;
+		text-align: left;
+	}
+	.ulLista
+	{
+		margin: 0;
+		padding: 0;
+	}
+/**************************Tabla de AVG*/
+	.avg5-12-100, .avgdivtiempo
+	{
+		display: inline-block;
+		padding: 0 .3em;
+	} 
+	.btncancel
+	{
+		padding: .5em;
+		text-align: right;
+	}
+	.avgtira
+	{
+		padding-top: .3em;
+	}
+	.contenedoravg
+	{
+  		background: rgba(255, 255, 255, 1);
+		height: 80%;
+  		left: -100%;
+  		padding: 21% 0 0 0;
+		position: absolute;
+		top:0;
+  		width: 100%;
+  		z-index: 600;
+	}
+/**************************Menú*/
+	#menugeneral
+	{
+		background: rgba(0,0,0,.7);
+		height: 100%;
+		left: -100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 900;
+	}
+	#menugeneralul
+	{
+		margin: 0;
+		padding: 0;
+	}
+	.menugeneralli
+	{
+		border-bottom: 1px solid white;
+		color: rgba(219,215,210,8);
+		font-family: "letrageneral";
+		font-size: 15px;
+		padding: 2em 0;
+	}
+/**************************Nuevo Récord*/
+	#nuevorecord
+	{
+		background: #81EFA8;
+		color: #0D0B6C;
+		font-family: "letrageneral";
+		padding: .5em 0;
+		position: absolute;
+		top: -100%;
+		width: 100%;
+		z-index: 800;
+	}
+}
+/*
+@media only screen and (min-width: 481px) and (max-width: 640px){…} 
+@media only screen and (min-width: 641px) and (max-width: 768px){…} 
+@media only screen and (min-width: 769px) and (max-width: 1024px){…} 
+@media only screen and (min-width: 1025px){…}
+*/
